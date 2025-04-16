@@ -1,9 +1,15 @@
-const App = () => {
+import { createElement } from "react";
 
+const App = () => {
+    return createElement(
+        "h1",
+        { className: "greeting" },
+        "Hello, this is a JSX Code!"
+      );
     return (
-        <div>
-            Hello JSX!
-        </div>
+        <h1 className="greeting">
+            "Hello, this is a JSX Code!"
+        </h1>
     );
 };
 
