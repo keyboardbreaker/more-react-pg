@@ -1,16 +1,18 @@
-import { createElement } from "react";
+'use client';
 
-const App = () => {
-    return createElement(
-        "h1",
-        { className: "greeting" },
-        "Hello, this is a JSX Code!"
-      );
+import { useState } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Users from '@/app/components/Users';
+
+const App = () =>  {
+    const [queryClient] = useState(() => new QueryClient());
     return (
-        <h1 className="greeting">
-            "Hello, this is a JSX Code!"
-        </h1>
+        <div>
+        <QueryClientProvider client={queryClient}>
+            <Users/>
+        </QueryClientProvider>
+        </div>
     );
-};
+}
 
 export default App;
